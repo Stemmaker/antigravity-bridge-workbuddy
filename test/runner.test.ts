@@ -1,3 +1,4 @@
+import path from "node:path";
 import { describe, it, expect } from "vitest";
 import {
   buildArgs,
@@ -64,7 +65,8 @@ function fakeDeps(opts: FakeOpts = {}) {
     removeLog: async (p) => {
       removed.push(p);
     },
-    readSessionsFile: async () => JSON.stringify({ "/repo": "sess-42" }),
+    // Keyed by the resolved cwd so the fixture behaves the same on Windows and POSIX.
+    readSessionsFile: async () => JSON.stringify({ [path.resolve("/repo")]: "sess-42" }),
     makeLogPath: () => "/tmp/agy-bridge-test.log",
     pollMs: 5,
     graceMs: 20,
@@ -154,8 +156,17 @@ describe("runAgy", () => {
     const f = fakeDeps({ stdout: "answer\n" });
     const r = await runAgy({ prompt: "q", cwd: "/repo" }, cfg, f.deps);
     expect(r.output).toBe("answer");
-    expect(r.sessionId).toBeUndefined();
+    expect(r.sessionId).toBe("sess-42");
     expect(f.removed).toEqual(["/tmp/agy-bridge-test.log"]);
+  });
+
+  it("prefers the conversation id reported by the CLI over the sessions file", async () => {
+    const f = fakeDeps({
+      stdout: JSON.stringify({ response: "answer", conversation_id: "cli-7" }),
+    });
+    const r = await runAgy({ prompt: "q", cwd: "/repo" }, cfg, f.deps);
+    expect(r.output).toBe("answer");
+    expect(r.sessionId).toBe("cli-7");
   });
 
   it("omits session id when file unreadable", async () => {
