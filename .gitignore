@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+*.tgz
+package/
+.DS_Store
+.env
+.env.*

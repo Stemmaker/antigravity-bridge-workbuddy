@@ -1,0 +1,64 @@
+{
+  "name": "antigravity-bridge-workbuddy",
+  "version": "1.0.0",
+  "description": "MCP bridge that drives the official Antigravity CLI (agy) — use your Antigravity subscription models from WorkBuddy, Claude Code, Cursor or any MCP client.",
+  "mcpName": "io.github.stemmaker/antigravity-bridge-workbuddy",
+  "type": "module",
+  "bin": {
+    "antigravity-bridge": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "AGENTS.md",
+    "SKILL.md",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "workbuddy",
+    "antigravity",
+    "antigravity-cli",
+    "agy",
+    "gemini",
+    "claude",
+    "cursor",
+    "delegation"
+  ],
+  "author": "Stemmaker (https://github.com/Stemmaker)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stemmaker/antigravity-bridge-workbuddy.git"
+  },
+  "homepage": "https://github.com/Stemmaker/antigravity-bridge-workbuddy#readme",
+  "bugs": {
+    "url": "https://github.com/Stemmaker/antigravity-bridge-workbuddy/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "prettier": "^3.8.4",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md,yml,yaml}": "prettier --write"
+  }
+}
