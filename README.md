@@ -2,6 +2,8 @@
 
 **让 WorkBuddy（以及任何 MCP 客户端）直接调用你 Antigravity 订阅里的模型额度 —— 走官方 `agy` CLI，不碰 Cookie、不逆向接口。**
 
+[![CI](https://github.com/Stemmaker/antigravity-bridge-workbuddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Stemmaker/antigravity-bridge-workbuddy/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Stemmaker/antigravity-bridge-workbuddy?color=blue)](https://github.com/Stemmaker/antigravity-bridge-workbuddy/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](package.json)
 [![MCP](https://img.shields.io/badge/MCP-stdio-purple)](https://modelcontextprotocol.io)

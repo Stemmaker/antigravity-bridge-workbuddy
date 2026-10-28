@@ -2,6 +2,8 @@
 
 **Use your Antigravity subscription models from WorkBuddy — or any MCP client. It drives the official `agy` CLI. No cookies, no reverse-engineered endpoints.**
 
+[![CI](https://github.com/Stemmaker/antigravity-bridge-workbuddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Stemmaker/antigravity-bridge-workbuddy/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Stemmaker/antigravity-bridge-workbuddy?color=blue)](https://github.com/Stemmaker/antigravity-bridge-workbuddy/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](package.json)
 [![MCP](https://img.shields.io/badge/MCP-stdio-purple)](https://modelcontextprotocol.io)
